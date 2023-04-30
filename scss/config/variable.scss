@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Raleway-Light';
+    src: url("../fonts/Raleway-Light.ttf");
+}
+
+@font-face {
+    font-family: 'Raleway-ExtraLight';
+    src: url("../fonts/Raleway-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: 'Raleway-Medium';
+    src: url("../fonts/Raleway-Medium.ttf");
+}
+
+
+
+$max-width: 1150px;
+$border-radius: 3px;
+$font-size: 15px;
+
+
+
+// color
+$color-white: #ffffff;
+$color-gray: #919293;
+$color-dark-gray: #252726;
+$color-turquoise: #00e1ff;
+$color-menu: #3f4244;
+$color-services: #929ba0;
+
+
+$font-light: 'Raleway-Light', Arial sans-serif;
+$font-extralight: 'Raleway-ExtraLight', Arial sans-serif;
+$font-medium: 'Raleway-Medium', Arial sans-serif;

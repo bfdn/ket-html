@@ -1,0 +1,141 @@
+.header {
+    height: 60px;
+
+    @include mq('tablet') {
+        height: 100px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mq('tablet') {
+            height: 100%;
+
+
+        }
+    }
+
+    &__logo {
+        width: 126px;
+        margin-left: 10px;
+        margin-top: 15px;
+        //flex: 50%;
+
+        @include mq('tablet') {
+            margin-top: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__toggler {
+        display: block;
+        margin-right: 10px;
+
+        @include mq('tablet') {
+            display: none;
+            margin-right: 0;
+        }
+    }
+
+    &__menu {
+        pointer-events: none;
+        background-color: $color-dark-gray;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        transition: all 500ms;
+        z-index: 1;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+
+        display: flex;
+        flex-direction: column;
+
+
+
+        @include mq('tablet') {
+            opacity: 1;
+            z-index: 1;
+            position: inherit;
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            width: 70%;
+
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @include mq('desktop') {
+            width: 50%;
+        }
+
+        &-item {
+            color: $color-white;
+            border-bottom: 1px solid gray;
+
+            &:last-child {
+                border: none;
+            }
+
+            @include mq('tablet') {
+                border: none;
+            }
+        }
+
+        &-link {
+            color: $color-white;
+            display: block;
+            line-height: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: $color-menu;
+            }
+
+            @include mq('tablet') {
+                pointer-events: auto;
+                color: $color-menu;
+
+                &::after {
+                    display: block;
+                    content: '';
+                    border-bottom: 2px solid #019fb6;
+                    transform: scaleX(0);
+                    transition: transform 250ms ease-in-out;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                }
+            }
+
+
+        }
+
+
+        &--show {
+            pointer-events: auto;
+            opacity: 1;
+            top: 6%;
+            z-index: 1;
+            //transition: all 500ms;
+
+
+        }
+    }
+}
